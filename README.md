@@ -65,7 +65,6 @@ This will open the Editor, for example Visual Studio Code
 Then, edit the .env.local file (using your preferred editor) to set the necessary variables:
 
 ```bash
-NODE_ENV=development
 API_URL=https://prueba-tecnica-api-tienda-moviles.onrender.com/products
 API_KEY=ask-for-the-api-key
 ```
@@ -116,5 +115,5 @@ Get a specific phone by ID
 
 ## Demo
 
-https://wynn-al-marjansland-app.vercel.app/
+https://mobile-phone-catalog-1ssz8hony-marcocastiglionis-projects.vercel.app/
 
