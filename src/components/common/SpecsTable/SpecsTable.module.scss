@@ -1,0 +1,62 @@
+.specsTableContainer {
+  .specsList {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .specsRow {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 0;
+    border-top: .5px solid $foreground-light;
+    border-bottom: .5px solid $foreground-light;
+    margin-bottom: -.5px;
+    
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+  
+  .specName {
+    flex-basis: 150px;
+    flex-shrink: 0;
+    margin: 0;
+    padding-right: 1rem;
+
+    @include responsive(lg) {
+      flex-basis: 300px;
+    }
+  }
+  
+  .specValue {
+    flex-basis: 850px;
+    flex-shrink: 1;
+    margin: 0;
+    padding-left: 1rem;
+    text-align: left;
+  }
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .specsRow {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 0.75rem 0;
+  }
+  
+  .specName {
+    flex-basis: auto;
+    margin-bottom: 0.25rem;
+    padding-right: 0;
+  }
+  
+  .specValue {
+    flex-basis: auto;
+    padding-left: 0;
+    text-align: left;
+  }
+}

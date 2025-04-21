@@ -1,0 +1,39 @@
+
+@import "variables";
+
+.skeleton {
+    &-card {
+        background-color: white;
+        border-radius: 8px;
+        overflow: hidden;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        padding-bottom: 15px;
+    }
+  
+    &-image {
+        height: 200px;
+        background-color: $skeleton-bg;
+        margin-bottom: 15px;
+    }
+  
+    &-title, 
+    &-brand, 
+    &-price {
+        height: 15px;
+        background-color: $skeleton-bg;
+        margin: 10px 15px;
+        border-radius: 4px;
+    }
+  
+    &-title {
+        width: 80%;
+    }
+  
+    &-brand {
+        width: 60%;
+    }
+  
+    &-price {
+        width: 40%;
+    }
+}

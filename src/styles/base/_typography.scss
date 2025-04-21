@@ -1,0 +1,14 @@
+@use "@/styles/abstracts/variables" as *;
+@use "@/styles/abstracts/mixins" as *;
+
+@mixin font-base {
+    font-family: $font-primary;
+    font-size: $font-base-size;
+    font-weight: $font-base-wight;
+    line-height: $line-height;
+    color: $foreground-light;
+}
+
+body {
+    @include font-base;
+}

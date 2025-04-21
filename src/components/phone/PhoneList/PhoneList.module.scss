@@ -1,0 +1,92 @@
+.phoneList {
+    &.grid {
+        display: grid;
+        justify-content: center;
+        align-items: center;
+        grid-template-columns: repeat(1, 377px);
+        max-width: 377px;
+        margin: 0 auto;
+
+        @include responsive("md") {
+            grid-template-columns: repeat(2, 377px);
+            max-width: 754px;
+        }
+
+        @include responsive("xl") {
+            grid-template-columns: repeat(3, 344px);
+            max-width: 1032px;
+        }
+        
+        @include responsive("2xl") {
+            grid-template-columns: repeat(4, 344px);
+            max-width: 1376px;
+        }
+
+        @include responsive("3xl") {
+            grid-template-columns: repeat(5, 344px);
+            max-width: 1720px;
+        }
+    }  
+}
+
+.phoneCardSkeleton {
+    background-color: $background-light;
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+  
+    &__image {
+      aspect-ratio: 1.2 / 1;
+      width: 100%;
+    }
+  
+    &__content {
+      padding: 1rem;
+      display: flex;
+      flex-direction: row;
+      gap: 0.5rem;
+      justify-content: space-between;
+    }
+  
+    &__button {
+      margin-top: auto;
+      border-radius: 0 0 8px 8px;
+    }
+}
+
+.loadingMore {
+    grid-column: 1 / -1;
+    display: flex;
+    justify-content: center;
+    padding: 2rem 0;
+    text-align: center;
+    
+    .loadingIndicator {
+      padding: 0.75rem 1.5rem;
+      border-radius: 4px;
+      font-size: 0.875rem;
+      color: #666;
+      animation: pulse 1.5s infinite;
+    }
+    
+    .scrollIndicator {
+      font-size: 0.875rem;
+      color: #999;
+      opacity: 0.7;
+    }
+}
+  
+@keyframes pulse {
+    0% {
+        opacity: 0.6;
+    }
+    50% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0.6;
+    }
+}

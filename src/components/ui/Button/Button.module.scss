@@ -1,0 +1,48 @@
+.button {  
+  &:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+  }
+}
+
+.primary,
+.secondary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.25rem;
+  cursor: pointer;
+  transition: background-color 0.2s, border-color 0.2s;
+  border: none;
+  outline: none;
+  min-width: 16.25rem;
+  transition: all .2s ease;
+
+  &:hover:not(:disabled) {
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, .5);
+  }
+}
+
+.primary {
+  background-color: $background-dark;
+  color: $foreground-dark;
+}
+
+.secondary {
+  background-color: transparent;
+  color: $foreground-light;
+  border: .5px solid $foreground-light;
+}
+
+.link {
+  color: $alert;
+  cursor: pointer;
+
+  &:hover {
+    text-decoration: underline;
+  }
+  
+  &.alert {
+    color: $alert;
+  }
+}

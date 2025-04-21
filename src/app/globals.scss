@@ -1,0 +1,85 @@
+@use "tailwindcss" as *;
+@use "@/styles/abstracts";
+@use "@/styles/base";
+
+:root {
+  --background: #{$background-light};
+  --foreground: #{$foreground-light};
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #{$background-dark};
+    --foreground: #{$foreground-dark};
+  }
+}
+
+body {
+  background: var(--background);
+}
+
+h1 {
+  font-size: 1.25rem;
+  margin: 0;
+  text-transform: uppercase;
+
+  @include responsive(lg){
+    font-size: 1.5rem;
+  }
+}
+
+h2 {
+  font-size: .875rem;
+  margin: 0;
+  text-transform: uppercase;
+  
+  @include responsive(lg){
+    font-size: 1.25rem;
+  }
+}
+
+h3 {
+  font-size: .75rem;
+  margin: 0;
+  text-transform: uppercase;
+
+  @include responsive(lg){
+    font-size: .875rem;
+  }
+}
+
+p {
+  margin: 0;
+}
+
+dd {
+  font-size: .75rem;
+}
+
+dt {
+  font-size: .75rem;
+  margin: 0;
+  text-transform: uppercase;
+}
+
+main {
+  @include wrapper;
+  height: 100vh;
+}
+
+main > div {
+  padding-top: 5rem;
+}
+
+.p-phone-catalog {
+  display: flex;
+  flex-direction: column;
+  gap: 3.75rem;
+}

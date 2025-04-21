@@ -1,0 +1,156 @@
+.cartPage {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding-top: 80px;
+
+    h1 {
+        margin-bottom: 3rem;
+    }
+    
+    .cartContainer {
+        overflow: auto;
+        flex: 1;
+    }
+
+    .checkoutContainer {
+        background-color: $background-light;
+        height: 133px;
+        width: 100%;
+        padding: 1rem;
+
+        @include responsive(md){
+            padding: 0
+        }
+
+        .checkoutContent {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            gap: .75rem;
+            
+            @include responsive(md){
+                @include wrapper;
+                flex-direction: row;
+                padding-top: 1.5rem;
+            }
+
+            .continueShopping {
+                width: 50%;
+
+                @include responsive(md) {
+                    flex: 1;
+                }
+    
+                button {
+                    min-width: auto;
+                    width: 100%;
+
+                    @include responsive(sm){
+                        width: 10rem;
+                    }
+                }
+            }
+
+            .ctaContainer {
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                justify-content: flex-end;
+                gap: 2rem;
+                width: 50%;
+    
+                @include responsive(md){
+                    gap: 1rem;
+                }
+    
+                @include responsive(lg){
+                    gap: 5rem;
+                }
+
+                button {
+                    min-width: auto;
+                    width: 100%;
+
+                    @include responsive(sm){
+                        width: 10rem;
+                    }
+                }
+    
+                .ctaContainerContent {
+                    display: flex;
+                    flex-direction: row;
+                    align-items: center;
+    
+                    @include responsive(lg){
+                        gap: 5rem;
+                    }
+                }
+            }
+        }
+
+        .cartSummary__total {
+            display: none;
+            flex-direction: row;
+            font-size: .875rem;
+            gap: 1rem;
+
+            @include responsive(md){
+                display: flex;
+                gap: 1.5rem;
+            }
+
+            &__mobile {
+                display: flex;
+                font-size: .875rem;
+                font-weight: 400;
+                justify-content: space-between;
+                margin-bottom: 1.5rem;
+                @include responsive(md){
+                    display: none;
+                }
+            }
+        }
+    }
+
+    .cartItems {
+        display: flex;
+        flex-direction: column;
+        gap: 3rem;
+
+        .cartItem {
+            display: flex;
+            flex-direction: row;
+            gap: 2.5rem;   
+    
+            &__image {
+                max-width: 16.375rem;
+                width: 100%;
+    
+                img {
+                    object-fit: contain;
+                    width: 100%;
+                }
+            }
+    
+            &__name {
+                margin-bottom: .25rem;
+                text-transform: uppercase;
+            }
+    
+            &__storage {
+                margin-bottom: 1.25rem;
+                text-transform: uppercase;
+            }
+    
+            &__details {
+                display: flex;
+                flex-direction: column;
+                justify-content: space-around;
+            }
+        }
+    }
+
+    
+}

@@ -1,0 +1,41 @@
+@use "sass:map";
+
+@use "@/styles/abstracts/variables" as *;
+
+@mixin flex-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+  
+@mixin box-shadow {
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+@mixin responsive($breakpoint) {
+  $min-width: map.get($breakpoints, $breakpoint);
+  @if $min-width {
+    @media (min-width: $min-width) {
+      @content;
+    }
+  }
+}
+
+@mixin wrapper {
+  box-sizing: content-box;
+  margin: 0 auto;
+  max-width: 1376px;
+  padding-left: 1rem;
+  padding-right: 1rem;
+
+  @include responsive(md) {
+    padding-left: 2.5rem;
+    padding-right: 2.5rem;
+  }
+}
+
+@mixin wrapperSection {
+  margin: 0 auto;
+  max-width: 1200px;  
+  width: 100%;
+}

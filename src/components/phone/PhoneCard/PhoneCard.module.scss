@@ -1,0 +1,98 @@
+.phoneCard {
+    background-color: $background-light;
+    color: $foreground-light;
+    position: relative;
+    aspect-ratio: 1;
+    overflow: hidden;
+    border: 0.5px solid $foreground-light;
+    // border-right: 0.5px solid $foreground-light;
+    // border-bottom: 0.5px solid $foreground-light;
+    transition: color 0.3s ease;
+
+    &::before {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: $background-dark;
+        transform: scaleY(0);
+        transform-origin: bottom;
+        transition: transform 0.3s ease;
+        z-index: 0;
+    }
+
+    &:hover {
+        color: $foreground-dark;
+
+        &::before {
+            transform: scaleY(1);
+        }
+
+        .phoneCard__brand, 
+        .phoneCard__name, 
+        .phoneCard__basePrice {
+            color: $foreground-dark;
+        }
+    }
+
+    &__content {
+        aspect-ratio: 1;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        position: relative;
+        transition: color 0.3s ease;
+        z-index: 1;
+    }
+
+    &__image-container {
+        flex: 1;
+        position: relative;
+        width: 100%;
+        height: 257px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        &--skeleton {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: $skeleton-bg;
+            z-index: 1;
+        }
+    }
+
+    &__image {
+        opacity: 0;
+        transition: opacity 0.3s ease;
+        max-height: 80%;
+        object-fit: contain;
+
+        &--loaded {
+            opacity: 1;
+            z-index: 2;
+        }
+    }
+
+    &__details {
+        align-items: end;
+        display: flex;
+        justify-content: space-between;
+        padding: 1rem;
+    }
+
+    &__name, &__brand, &__basePrice {
+        text-transform: uppercase;
+    }
+
+    &__brand {
+        color: #79736D;
+        font-size: 10px;
+    }
+
+}
