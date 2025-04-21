@@ -22,6 +22,7 @@
 }
 
 body {
+  @include font-base;
   background: var(--background);
 }
 
@@ -69,12 +70,12 @@ dt {
   text-transform: uppercase;
 }
 
-main {
+.main {
   @include wrapper;
   height: 100vh;
 }
 
-main > div {
+.main > div {
   padding-top: 5rem;
 }
 

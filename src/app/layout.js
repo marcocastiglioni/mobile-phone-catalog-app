@@ -19,7 +19,7 @@ export default function RootLayout({ children }) {
             <PhoneProvider>
               <CartProvider>
                 <Header />
-                <main>
+                <main className="main">
                   {children}
                 </main>
               </CartProvider>
